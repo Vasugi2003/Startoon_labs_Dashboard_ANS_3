@@ -15,7 +15,7 @@ const AdminDashBoard = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get('http://localhost:9000/api/users', {
+        const response = await axios.get('https://startoon-labs-dashboard-ans-3.onrender.com/api/users', {
           headers: {
             'Authorization': `Bearer ${JSON.parse(localStorage.getItem('user')).token}`,
           },
