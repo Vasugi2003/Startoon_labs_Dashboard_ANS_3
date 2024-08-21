@@ -13,7 +13,7 @@ const Signup = () => {
     e.preventDefault();
     const userData = { name, email, password, gender };
     try {
-      const response = await axios.post('http://localhost:9000/api/users/signup', userData);
+      const response = await axios.post('https://startoon-labs-dashboard-ans-3.onrender.com/api/users/signup', userData);
       console.log('Signup Successful', response.data);
       // Redirect to login page or show a success message
     } catch (error) {
