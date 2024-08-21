@@ -75,4 +75,18 @@ app.post('/api/users/login', async (req, res) => {
   }
 });
 
+
+app.get('/api/users', async (req, res) => {
+    console.log('GET /api/users requested');
+    try {
+      const users = await User.find({});
+      console.log('Users found:', users);
+      res.json(users);
+    } catch (err) {
+      console.error('Error fetching users:', err);
+      res.status(500).json({ error: 'Error fetching users' });
+    }
+  });
+  
+
 app.listen(port, () => console.log(`Server running on port ${port}`));
