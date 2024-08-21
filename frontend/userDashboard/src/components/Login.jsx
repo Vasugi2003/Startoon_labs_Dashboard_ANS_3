@@ -12,7 +12,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:9000/api/users/login', { email, password });
+      const response = await axios.post('https://startoon-labs-dashboard-ans-3.onrender.com/api/users/login', { email, password });
       if (response.data.user) {
         localStorage.setItem('user', JSON.stringify(response.data.user));
         if (response.data.user.email === 'admin@email.com') {
